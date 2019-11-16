@@ -48,6 +48,12 @@ function DataArea() {
         // numerically
         else if (heading === "name") {
           return a[heading].first.localeCompare(b[heading].first);
+        } else if (heading === "email") {
+          return a[heading].localeCompare(b[heading]);
+        } else if (heading === "dob") {
+          let aDOB = new Date(a[heading].date);
+          let bDOB = new Date(b[heading].date);
+          return aDOB > bDOB ? -1 : 1;
         } else {
           return a[heading] - b[heading];
         }
@@ -61,6 +67,12 @@ function DataArea() {
         // numerically
         else if (heading === "name") {
           return b[heading].first.localeCompare(a[heading].first);
+        } else if (heading === "email") {
+          return b[heading].localeCompare(a[heading]);
+        } else if (heading === "dob") {
+          let aDOB = new Date(a[heading].date);
+          let bDOB = new Date(b[heading].date);
+          return aDOB > bDOB ? 1 : -1;
         } else {
           return b[heading] - a[heading];
         }
@@ -96,12 +108,12 @@ function DataArea() {
   }
 
   return (
-    <UserContext.Provider value={{headings, usersState, order, handleSort, handleSearchChange, handleDOBSort }}>
-        <Nav />
-        <div className="data-area">
-          <DataTable />
-        </div>
-      </UserContext.Provider>
+    <UserContext.Provider value={{ headings, usersState, order, handleSort, handleSearchChange, handleDOBSort }}>
+      <Nav />
+      <div className="data-area">
+        <DataTable />
+      </div>
+    </UserContext.Provider>
   );
 };
 
