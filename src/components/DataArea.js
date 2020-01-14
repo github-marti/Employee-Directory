@@ -35,7 +35,7 @@ function DataArea() {
       setOrder("ascend");
     } else {
       setOrder("descend");
-    }
+    };
 
     function compareFnc(a, b) {
       if (order === "ascend") {
