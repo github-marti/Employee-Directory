@@ -54,6 +54,8 @@ function DataArea() {
           let aDOB = new Date(a[heading].date);
           let bDOB = new Date(b[heading].date);
           return aDOB > bDOB ? -1 : 1;
+        } else if (heading === "phone") {
+          return parseInt(a[heading].split('').slice(1, 4)) - parseInt(b[heading].split('').slice(1, 4));
         } else {
           return a[heading] - b[heading];
         }
@@ -73,6 +75,8 @@ function DataArea() {
           let aDOB = new Date(a[heading].date);
           let bDOB = new Date(b[heading].date);
           return aDOB > bDOB ? 1 : -1;
+        } else if (heading === "phone") {
+          return parseInt(b[heading].split('').slice(1, 4)) - parseInt(a[heading].split('').slice(1, 4));
         } else {
           return b[heading] - a[heading];
         }
