@@ -12,7 +12,7 @@ function Row() {
         const day = dayArray[0];
         const formattedDate = [month, day, year].join("-");
         return formattedDate;
-    }
+    };
 
     return (
         <>
@@ -49,6 +49,6 @@ function Row() {
                 )
             }
         </>)
-}
+};
 
 export default Row;

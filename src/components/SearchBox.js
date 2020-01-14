@@ -20,5 +20,5 @@ function SearchBox() {
       </form>
     </div>
   );
-}
+};
 export default SearchBox;
